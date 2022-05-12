@@ -1,10 +1,9 @@
 export default function fetchCountries(name) {
-  const address = 'https://restcountries.com/v3.1/name/';
-  const options = `?fields=name,capital,population,flags,languages`;
-
-  return fetch(`${address}${name}${options}`).then(response => {
+  return fetch(
+    `https://restcountries.com/v3.1/name/${name}/?fields=name,capital,population,flags,languages`,
+  ).then(response => {
     if (!response.ok) {
-      throw new Error(response.states);
+      throw new Error(response.status);
     }
     return response.json();
   });
