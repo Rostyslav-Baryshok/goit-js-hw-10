@@ -20,7 +20,7 @@ function onInputChange() {
       .then(dataProcessing)
       .catch(error => {
         Notify.failure('Oops, there is no country with that name');
-        console.log(error);
+        // console.log(error);
       });
   }
 
